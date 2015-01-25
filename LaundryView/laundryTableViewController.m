@@ -14,6 +14,7 @@
 #import "outOfServiceTableViewCell.h"
 #import "machinesXMLParser.h"
 #import "machine.h"
+#import "machineNotification.h"
 
 @interface laundryTableViewController ()
 
@@ -292,11 +293,17 @@
         
         [self saveNotificationsToDisk];
         
-        // Find notification object from array of notification objects so that the address can be cancelled
-        
-        // but how is the notification request linked to the notification object?
-        
-        //[self cancelNotification:nil];
+        for (int i = 0; i<[_arrayOfNotificationObjects count]; i++)
+        {
+            
+            if ([[[_arrayOfNotificationObjects objectAtIndex:i] machineID] isEqualToString:[[_machines objectAtIndex:indexPath.row] machineID]])
+            {
+                
+                [[UIApplication sharedApplication] cancelLocalNotification:[_arrayOfNotificationObjects objectAtIndex:i]];
+                
+            }
+            
+        }
         
     }
 
@@ -305,7 +312,7 @@
 - (void) createNotification:(machine *) userMachine
 {
 
-    UILocalNotification *notifyMe = [[UILocalNotification alloc] init];
+    machineNotification *notifyMe = [[machineNotification alloc] init];
 
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     
@@ -351,17 +358,12 @@
     
     notifyMe.soundName = UILocalNotificationDefaultSoundName;
     
+    notifyMe.machineID = [userMachine machineID];
+    
     [_arrayOfNotificationObjects addObject:notifyMe];
 
     [[UIApplication sharedApplication] scheduleLocalNotification:notifyMe];
 
-}
-
-- (void) cancelNotification:(machine *) userMachine
-{
-    
-    //[[UIApplication sharedApplication] cancelLocalNotification:nil];
-    
 }
 
 - (IBAction)mainViewDidUnwind:(UIStoryboardSegue *)segue
