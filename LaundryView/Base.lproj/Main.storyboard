@@ -276,6 +276,59 @@
                                     <outlet property="machineName" destination="ixR-CK-ySf" id="XPM-BO-VvZ"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="unknown" id="DfC-UK-bax" customClass="unknownTableViewCell">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DfC-UK-bax" id="aZI-2F-JSw">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="outOfService" translatesAutoresizingMaskIntoConstraints="NO" id="zmm-Vv-hn7">
+                                            <rect key="frame" x="8" y="16" width="44" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="44" id="LKz-OZ-rol"/>
+                                                <constraint firstAttribute="height" constant="44" id="RWR-EZ-iGq"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Washer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o64-53-xc7">
+                                            <rect key="frame" x="60" y="27" width="434" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="KRV-5l-PR9"/>
+                                                <constraint firstAttribute="width" constant="434" id="OQ7-Ye-X0s"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="OQ7-Ye-X0s"/>
+                                                </mask>
+                                            </variation>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status is unknown" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Sr-WJ-Moo">
+                                            <rect key="frame" x="473" y="28" width="119" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="PjA-QL-Tf8"/>
+                                                <constraint firstAttribute="width" constant="119" id="h1K-QV-QtL"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="13"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="zmm-Vv-hn7" firstAttribute="top" secondItem="aZI-2F-JSw" secondAttribute="topMargin" constant="8" id="20c-Lg-imR"/>
+                                        <constraint firstItem="o64-53-xc7" firstAttribute="leading" secondItem="aZI-2F-JSw" secondAttribute="leadingMargin" constant="52" id="4jh-un-Wjl"/>
+                                        <constraint firstItem="9Sr-WJ-Moo" firstAttribute="top" secondItem="aZI-2F-JSw" secondAttribute="topMargin" constant="20" id="GCu-MT-eLc"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="o64-53-xc7" secondAttribute="trailing" constant="98" id="PUC-es-pmd"/>
+                                        <constraint firstItem="o64-53-xc7" firstAttribute="top" secondItem="aZI-2F-JSw" secondAttribute="topMargin" constant="19" id="TtJ-SA-vj4"/>
+                                        <constraint firstItem="zmm-Vv-hn7" firstAttribute="leading" secondItem="aZI-2F-JSw" secondAttribute="leadingMargin" id="crF-nw-Op0"/>
+                                        <constraint firstItem="9Sr-WJ-Moo" firstAttribute="trailing" secondItem="aZI-2F-JSw" secondAttribute="trailingMargin" id="xRY-7F-zfH"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="machineName" destination="o64-53-xc7" id="NTF-jZ-Kea"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="pLt-oP-aOa" id="9tn-eP-jpU"/>
@@ -293,7 +346,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqp-I3-bmN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3367" y="282"/>
+            <point key="canvasLocation" x="3367" y="281"/>
         </scene>
         <!--About This App-->
         <scene sceneID="YV3-0e-8jZ">

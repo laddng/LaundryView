@@ -11,6 +11,7 @@
 #import "dormXMLParser.h"
 #import "machineTableViewCell.h"
 #import "availableMachineTableViewCell.h"
+#import "unknownTableViewCell.h"
 #import "outOfServiceTableViewCell.h"
 #import "machinesXMLParser.h"
 #import "machine.h"
@@ -181,6 +182,17 @@
     {
         
         outOfServiceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"outOfService"];
+        
+        cell.machineName.text = [NSString stringWithFormat:@"%@ %@", [[machine.type lowercaseString]capitalizedString], [NSString stringWithFormat:@"%d", [machine.name intValue]]];
+        
+        return cell;
+        
+    }
+    
+    else if ([machine.timeRemaining isEqualToString:@"unknown"])
+    {
+        
+        unknownTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"unknown"];
         
         cell.machineName.text = [NSString stringWithFormat:@"%@ %@", [[machine.type lowercaseString]capitalizedString], [NSString stringWithFormat:@"%d", [machine.name intValue]]];
         
