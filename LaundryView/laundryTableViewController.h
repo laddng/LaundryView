@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  laundryTableViewController.h
 //  LaundryView
 //
 //  Created by Nick Ladd on 12/27/14.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface laundryTableViewController : UITableViewController
 
 @end
-

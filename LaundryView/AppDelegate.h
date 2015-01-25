@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "laundryTableViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-
 @end
-
