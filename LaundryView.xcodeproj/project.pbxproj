@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		DD3E10841A745105004B376D /* initialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3E10831A745105004B376D /* initialViewController.m */; };
 		DD3E10861A7467C3004B376D /* NotificationLaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD3E10851A7467C3004B376D /* NotificationLaunchScreen.xib */; };
-		DD3E108D1A749EF0004B376D /* machineNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3E108C1A749EF0004B376D /* machineNotification.m */; };
 		DD3E10901A74A232004B376D /* unknownTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3E108F1A74A232004B376D /* unknownTableViewCell.m */; };
 		DD6C6C181A6AE4EA00192882 /* availableMachineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD6C6C171A6AE4EA00192882 /* availableMachineTableViewCell.m */; };
 		DD6C6C1B1A6AE72400192882 /* outOfServiceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD6C6C1A1A6AE72400192882 /* outOfServiceTableViewCell.m */; };
@@ -72,8 +71,6 @@
 		DD3E10831A745105004B376D /* initialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = initialViewController.m; sourceTree = "<group>"; };
 		DD3E10851A7467C3004B376D /* NotificationLaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationLaunchScreen.xib; sourceTree = "<group>"; };
 		DD3E10871A746AAB004B376D /* LaundryView.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = LaundryView.entitlements; sourceTree = "<group>"; };
-		DD3E108B1A749EF0004B376D /* machineNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = machineNotification.h; sourceTree = "<group>"; };
-		DD3E108C1A749EF0004B376D /* machineNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = machineNotification.m; sourceTree = "<group>"; };
 		DD3E108E1A74A232004B376D /* unknownTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unknownTableViewCell.h; sourceTree = "<group>"; };
 		DD3E108F1A74A232004B376D /* unknownTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = unknownTableViewCell.m; sourceTree = "<group>"; };
 		DD6C6C161A6AE4EA00192882 /* availableMachineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = availableMachineTableViewCell.h; sourceTree = "<group>"; };
@@ -326,8 +323,6 @@
 			children = (
 				DD3E108E1A74A232004B376D /* unknownTableViewCell.h */,
 				DD3E108F1A74A232004B376D /* unknownTableViewCell.m */,
-				DD3E108B1A749EF0004B376D /* machineNotification.h */,
-				DD3E108C1A749EF0004B376D /* machineNotification.m */,
 				DDC385281A4F929B00F445A6 /* machineTableViewCell.h */,
 				DDC385291A4F929B00F445A6 /* machineTableViewCell.m */,
 				DD6C6C161A6AE4EA00192882 /* availableMachineTableViewCell.h */,
@@ -488,7 +483,6 @@
 				DDC3852A1A4F929B00F445A6 /* machineTableViewCell.m in Sources */,
 				DDC385311A4F941E00F445A6 /* dorm.m in Sources */,
 				DDC3852E1A4F93E100F445A6 /* dormXMLParser.m in Sources */,
-				DD3E108D1A749EF0004B376D /* machineNotification.m in Sources */,
 				DD6C6C181A6AE4EA00192882 /* availableMachineTableViewCell.m in Sources */,
 				DD3E10841A745105004B376D /* initialViewController.m in Sources */,
 				DDD6F2791A69B67E00DFDFDF /* machinesXMLParser.m in Sources */,

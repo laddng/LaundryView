@@ -61,7 +61,7 @@
     else if ([elementName isEqualToString:@"appliance_desc_key"])
     {
         
-        self.tempMachineObject.machineID = [NSString stringWithString:self.foundValue];
+        self.tempMachineObject.machineID = [[[NSString stringWithString:self.foundValue]stringByReplacingOccurrencesOfString:@"\n" withString:@""]stringByReplacingOccurrencesOfString:@"\t" withString:@""];
         
     }
     

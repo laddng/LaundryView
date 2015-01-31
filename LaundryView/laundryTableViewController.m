@@ -15,15 +15,10 @@
 #import "outOfServiceTableViewCell.h"
 #import "machinesXMLParser.h"
 #import "machine.h"
-#import "machineNotification.h"
 
 @interface laundryTableViewController ()
 
 @property (strong, nonatomic) NSMutableArray *machines;
-
-@property (strong, nonatomic) NSMutableArray *notfiyMeArray;
-
-@property (strong, nonatomic) NSMutableArray *arrayOfNotificationObjects;
 
 @property NSString *dormID;
 
@@ -35,21 +30,15 @@
 
 - (void)viewDidLoad
 {
-    
+
     [super viewDidLoad];
-    
+
     [self loadUserDormSettings];
-    
+
     _machines = [[NSMutableArray alloc] init];
-    
-    _notfiyMeArray = [[NSMutableArray alloc] init];
-    
-    _arrayOfNotificationObjects = [[NSMutableArray alloc] init];
 
     [self loadMachines:nil];
-    
-    [self loadNotificationsFromDisk];
-    
+
 }
 
 - (void) loadUserDormSettings
@@ -111,54 +100,6 @@
     
 }
 
-- (void) loadNotificationsFromDisk
-{
-    
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    
-    documentsDirectory = [documentsDirectory stringByAppendingPathComponent:@"userNotifications.txt"];
-    
-    NSString *filePath = [NSString stringWithFormat:@"%@", documentsDirectory];
-    
-    NSFileManager *fileManager = [[NSFileManager alloc] init];
-    
-    if([fileManager fileExistsAtPath:filePath])
-    {
-        
-        NSString *fileContents = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-        
-        NSArray *notificationRequests = [fileContents componentsSeparatedByString:@","];
-        
-        [_notfiyMeArray addObjectsFromArray:notificationRequests];
-        
-    }
-    
-    [self.tableView reloadData];
-
-}
-
-- (void) saveNotificationsToDisk
-{
-        
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-
-    NSString *notificationRequests = [[NSString alloc] init];
-    
-    for (int i = 0; i<[_notfiyMeArray count]; i++)
-    {
-        
-        notificationRequests = [notificationRequests stringByAppendingString:[NSString stringWithFormat:@"%@,", [_notfiyMeArray objectAtIndex:i]]];
-        
-    }
-
-    [notificationRequests writeToFile:[documentsDirectory stringByAppendingPathComponent:@"userNotifications.txt"] atomically:YES encoding:NSUTF8StringEncoding error:nil];
-    
-}
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
 
@@ -205,20 +146,30 @@
         
         machineTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"machine" forIndexPath:indexPath];
 
-        if ([_notfiyMeArray containsObject:[[_machines objectAtIndex:indexPath.row] machineID]])
-        {
-            
-            [cell.notificationSwitch setOn:YES animated:NO];
+        [cell.notificationSwitch setOn:NO animated:NO];
 
-        }
-        
-        else
+        UIApplication *app = [UIApplication sharedApplication];
+
+        NSArray *eventArray = [app scheduledLocalNotifications];
+
+        for (int i=0; i<[eventArray count]; i++)
         {
+
+            UILocalNotification* oneEvent = [eventArray objectAtIndex:i];
             
-            [cell.notificationSwitch setOn:NO animated:NO];
+            NSDictionary *userInfoCurrent = oneEvent.userInfo;
+            
+            NSString *machineId = [NSString stringWithFormat:@"%@",[userInfoCurrent valueForKey:@"machineID"]];
+            
+            if ([machineId isEqualToString:[[_machines objectAtIndex:indexPath.row] machineID]])
+            {
+                
+                [cell.notificationSwitch setOn:YES animated:NO];
+                
+            }
             
         }
-        
+
         cell.machineName.text = [NSString stringWithFormat:@"%@ %@", [[machine.type lowercaseString]capitalizedString], [NSString stringWithFormat:@"%d", [machine.name intValue]]];
         
         float averageMachineTime = [machine.cycleTime floatValue];
@@ -287,34 +238,34 @@
     
     if(sender.on)
     {
-        
+
         [self createNotification:[_machines objectAtIndex:indexPath.row]];
-        
-        NSString *machineID = [[_machines objectAtIndex:indexPath.row] machineID];
-        
-        [_notfiyMeArray addObject: machineID];
-        
-        [self saveNotificationsToDisk];
 
     }
     
     else if (!sender.on)
     {
+
+        UIApplication *app = [UIApplication sharedApplication];
         
-        [_notfiyMeArray removeObject:[[_machines objectAtIndex:indexPath.row] machineID]];
-        
-        [self saveNotificationsToDisk];
-        
-        for (int i = 0; i<[_arrayOfNotificationObjects count]; i++)
+        NSArray *eventArray = [app scheduledLocalNotifications];
+
+        for (int i=0; i<[eventArray count]; i++)
         {
-            
-            if ([[[_arrayOfNotificationObjects objectAtIndex:i] machineID] isEqualToString:[[_machines objectAtIndex:indexPath.row] machineID]])
+
+            UILocalNotification* oneEvent = [eventArray objectAtIndex:i];
+
+            NSDictionary *userInfoCurrent = oneEvent.userInfo;
+
+            NSString *machineId = [NSString stringWithFormat:@"%@",[userInfoCurrent valueForKey:@"machineID"]];
+
+            if ([machineId isEqualToString:[[_machines objectAtIndex:indexPath.row] machineID]])
             {
-                
-                [[UIApplication sharedApplication] cancelLocalNotification:[_arrayOfNotificationObjects objectAtIndex:i]];
-                
+
+                [app cancelLocalNotification:oneEvent];
+
             }
-            
+
         }
         
     }
@@ -324,7 +275,7 @@
 - (void) createNotification:(machine *) userMachine
 {
 
-    machineNotification *notifyMe = [[machineNotification alloc] init];
+    UILocalNotification *notifyMe = [[UILocalNotification alloc] init];
 
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     
@@ -370,9 +321,21 @@
     
     notifyMe.soundName = UILocalNotificationDefaultSoundName;
     
-    notifyMe.machineID = [userMachine machineID];
-    
-    [_arrayOfNotificationObjects addObject:notifyMe];
+    NSDictionary *machineIDrecord = [[NSDictionary alloc] initWithObjects:@[[userMachine machineID]] forKeys: @[@"machineID"]];
+
+    notifyMe.userInfo = machineIDrecord;
+
+    for (UILocalNotification *notifyMeList in [[UIApplication sharedApplication] scheduledLocalNotifications])
+    {
+
+        if([[notifyMeList.userInfo objectForKey:@"machineID"] isEqualToString:[userMachine machineID]])
+        {
+            
+            return;
+            
+        }
+        
+    }
 
     [[UIApplication sharedApplication] scheduleLocalNotification:notifyMe];
 
