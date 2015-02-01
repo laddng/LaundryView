@@ -312,12 +312,10 @@
         notifyMe.alertBody = @"Your laundry load in the dryer will be finished in 1 minute!";
 
     }
-    
-    notifyMe.alertLaunchImage = @"NotificationLaunchScreen";
-
-    notifyMe.applicationIconBadgeNumber = 1;
 
     notifyMe.alertAction = @"view the status of your laundry";
+    
+    notifyMe.applicationIconBadgeNumber = 1;
     
     notifyMe.soundName = UILocalNotificationDefaultSoundName;
     

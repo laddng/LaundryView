@@ -5,7 +5,6 @@
 //  Created by Nick Ladd on 12/27/14.
 //  Copyright (c) 2014 Wake Forest University. All rights reserved.
 //
-
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
@@ -22,16 +21,9 @@
     UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
     
     [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
-    
-    UILocalNotification *localNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
-    
-    if (localNotification)
-    {
-        
-        application.applicationIconBadgeNumber = localNotification.applicationIconBadgeNumber-1;
-        
-    }
 
+    application.applicationIconBadgeNumber = 0;
+    
     return YES;
     
 }
@@ -53,9 +45,9 @@
 
 - (void)application:(UIApplication *)app didReceiveLocalNotification:(UILocalNotification *)notification
 {
-    
-    app.applicationIconBadgeNumber = notification.applicationIconBadgeNumber - 1;
-    
+
+    app.applicationIconBadgeNumber = 0;
+
 }
 
 @end

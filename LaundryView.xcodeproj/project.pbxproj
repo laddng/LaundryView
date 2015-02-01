@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DD3E10841A745105004B376D /* initialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3E10831A745105004B376D /* initialViewController.m */; };
-		DD3E10861A7467C3004B376D /* NotificationLaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD3E10851A7467C3004B376D /* NotificationLaunchScreen.xib */; };
 		DD3E10901A74A232004B376D /* unknownTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3E108F1A74A232004B376D /* unknownTableViewCell.m */; };
 		DD6C6C181A6AE4EA00192882 /* availableMachineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD6C6C171A6AE4EA00192882 /* availableMachineTableViewCell.m */; };
 		DD6C6C1B1A6AE72400192882 /* outOfServiceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD6C6C1A1A6AE72400192882 /* outOfServiceTableViewCell.m */; };
@@ -52,6 +51,7 @@
 		DDC3852A1A4F929B00F445A6 /* machineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC385291A4F929B00F445A6 /* machineTableViewCell.m */; };
 		DDC3852E1A4F93E100F445A6 /* dormXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC3852D1A4F93E100F445A6 /* dormXMLParser.m */; };
 		DDC385311A4F941E00F445A6 /* dorm.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC385301A4F941E00F445A6 /* dorm.m */; };
+		DDD495FE1A7DC5D30070E767 /* WFU_logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = DDD495FD1A7DC5D30070E767 /* WFU_logo.gif */; };
 		DDD6F2791A69B67E00DFDFDF /* machinesXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD6F2781A69B67E00DFDFDF /* machinesXMLParser.m */; };
 		DDD6F27C1A69B72700DFDFDF /* machine.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD6F27B1A69B72700DFDFDF /* machine.m */; };
 /* End PBXBuildFile section */
@@ -69,7 +69,6 @@
 /* Begin PBXFileReference section */
 		DD3E10821A745105004B376D /* initialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = initialViewController.h; sourceTree = "<group>"; };
 		DD3E10831A745105004B376D /* initialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = initialViewController.m; sourceTree = "<group>"; };
-		DD3E10851A7467C3004B376D /* NotificationLaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationLaunchScreen.xib; sourceTree = "<group>"; };
 		DD3E10871A746AAB004B376D /* LaundryView.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = LaundryView.entitlements; sourceTree = "<group>"; };
 		DD3E108E1A74A232004B376D /* unknownTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unknownTableViewCell.h; sourceTree = "<group>"; };
 		DD3E108F1A74A232004B376D /* unknownTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = unknownTableViewCell.m; sourceTree = "<group>"; };
@@ -127,6 +126,7 @@
 		DDC3852D1A4F93E100F445A6 /* dormXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = dormXMLParser.m; path = subclass/dormXMLParser.m; sourceTree = "<group>"; };
 		DDC3852F1A4F941E00F445A6 /* dorm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dorm.h; path = subclass/dorm.h; sourceTree = "<group>"; };
 		DDC385301A4F941E00F445A6 /* dorm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = dorm.m; path = subclass/dorm.m; sourceTree = "<group>"; };
+		DDD495FD1A7DC5D30070E767 /* WFU_logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = WFU_logo.gif; sourceTree = "<group>"; };
 		DDD6F2771A69B67E00DFDFDF /* machinesXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = machinesXMLParser.h; sourceTree = "<group>"; };
 		DDD6F2781A69B67E00DFDFDF /* machinesXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = machinesXMLParser.m; sourceTree = "<group>"; };
 		DDD6F27A1A69B72700DFDFDF /* machine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = machine.h; sourceTree = "<group>"; };
@@ -196,6 +196,7 @@
 		DDAEE0B01A695E55000745D7 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				DDD495FD1A7DC5D30070E767 /* WFU_logo.gif */,
 				DD6C6C211A6AF35B00192882 /* animatedMachine */,
 				DD6C6C1C1A6AEBCA00192882 /* outOfServiceMachineIcon */,
 				DDAEE0FB1A697373000745D7 /* wfuLogo */,
@@ -285,7 +286,6 @@
 				DDC3852B1A4F92A200F445A6 /* subclass */,
 				DDAEE0B01A695E55000745D7 /* images */,
 				DDC3850B1A4F8F9400F445A6 /* LaunchScreen.xib */,
-				DD3E10851A7467C3004B376D /* NotificationLaunchScreen.xib */,
 				DD6C6C261A6AF3FE00192882 /* Images.xcassets */,
 				DDC384FC1A4F8F9400F445A6 /* Supporting Files */,
 			);
@@ -441,6 +441,7 @@
 				DD6C6C3D1A6AF90B00192882 /* activeMachineIcon@f5x2.png in Resources */,
 				DD6C6C201A6AEC0200192882 /* outOfServiceMachineIcon@88px.png in Resources */,
 				DD6C6C3C1A6AF90B00192882 /* activeMachineIcon@f4x2.png in Resources */,
+				DDD495FE1A7DC5D30070E767 /* WFU_logo.gif in Resources */,
 				DDAEE0E81A696E87000745D7 /* appIcon@180px.png in Resources */,
 				DD6C6C3A1A6AF90B00192882 /* activeMachineIcon@f2x2.png in Resources */,
 				DDAEE0E11A696E87000745D7 /* appIcon@40px.png in Resources */,
@@ -452,7 +453,6 @@
 				DD6C6C2E1A6AF8CE00192882 /* activeMachineIcon@f1.png in Resources */,
 				DDAEE0FA1A69736F000745D7 /* wfuLogo@2x.png in Resources */,
 				DD6C6C301A6AF8CE00192882 /* activeMachineIcon@f3.png in Resources */,
-				DD3E10861A7467C3004B376D /* NotificationLaunchScreen.xib in Resources */,
 				DDAEE0D51A696325000745D7 /* home_icon@2x.png in Resources */,
 				DDAEE0E91A696E87000745D7 /* appIcon@1024px.png in Resources */,
 				DD6C6C2F1A6AF8CE00192882 /* activeMachineIcon@f2.png in Resources */,

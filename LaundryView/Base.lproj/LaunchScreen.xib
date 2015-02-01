@@ -9,10 +9,26 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WFU_logo.gif" translatesAutoresizingMaskIntoConstraints="NO" id="5Ta-Pu-2kq">
+                    <rect key="frame" x="82" y="109" width="317" height="261"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="317" id="BQw-B1-smF"/>
+                        <constraint firstAttribute="height" constant="261" id="GWg-Sr-k2r"/>
+                    </constraints>
+                </imageView>
+            </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="5Ta-Pu-2kq" secondAttribute="centerX" constant="-0.5" id="Xqt-Vd-Vxb"/>
+                <constraint firstAttribute="centerY" secondItem="5Ta-Pu-2kq" secondAttribute="centerY" constant="0.5" id="drS-Db-2T2"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
+    <resources>
+        <image name="WFU_logo.gif" width="864" height="550"/>
+    </resources>
 </document>
