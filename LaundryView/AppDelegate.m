@@ -48,6 +48,8 @@
 
     app.applicationIconBadgeNumber = -1;
 
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadTheTable" object:nil];
+    
 }
 
 @end

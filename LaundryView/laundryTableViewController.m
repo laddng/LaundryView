@@ -33,19 +33,19 @@
 
     [super viewDidLoad];
 
-    [self loadUserDormSettings];
-
     _machines = [[NSMutableArray alloc] init];
-    
-    [self downloadData];
 
+    [self loadUserDormSettings];
+    
     [self loadMachines:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(downloadData) name:@"reloadTheTable" object:nil];
     
 }
 
 - (void) loadUserDormSettings
 {
-    
+
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 
     NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -71,9 +71,9 @@
 
     }
     
-    [self.tableView reloadData];
+    [self downloadData];
     
-    [self loadMachines:nil];
+    [self.tableView reloadData];
     
 }
 
@@ -87,7 +87,7 @@
     [self.tableView reloadData];
     
     [NSTimer scheduledTimerWithTimeInterval:15.0 target:self selector:@selector(loadMachines:) userInfo:nil repeats:YES];
-    
+
 }
 
 - (void) downloadData
@@ -107,6 +107,7 @@
     
     _machines = xmlParserDelegate.machines;
     
+    [self.tableView reloadData];
     
 }
 
@@ -353,8 +354,6 @@
 {
  
     [self loadUserDormSettings];
-    
-    [self downloadData];
     
 }
 
