@@ -22,7 +22,7 @@
     
     [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
 
-    application.applicationIconBadgeNumber = 0;
+    application.applicationIconBadgeNumber = -1;
     
     return YES;
     
@@ -46,7 +46,7 @@
 - (void)application:(UIApplication *)app didReceiveLocalNotification:(UILocalNotification *)notification
 {
 
-    app.applicationIconBadgeNumber = 0;
+    app.applicationIconBadgeNumber = -1;
 
 }
 

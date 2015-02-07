@@ -36,9 +36,11 @@
     [self loadUserDormSettings];
 
     _machines = [[NSMutableArray alloc] init];
+    
+    [self downloadData];
 
     [self loadMachines:nil];
-
+    
 }
 
 - (void) loadUserDormSettings
@@ -80,6 +82,17 @@
     
     [timer invalidate];
     
+    [self performSelectorInBackground:@selector(downloadData) withObject:nil];
+    
+    [self.tableView reloadData];
+    
+    [NSTimer scheduledTimerWithTimeInterval:15.0 target:self selector:@selector(loadMachines:) userInfo:nil repeats:YES];
+    
+}
+
+- (void) downloadData
+{
+    
     NSURL * pathToMachinesFile = [NSURL URLWithString:[NSString stringWithFormat: @"http://api.laundryview.com/room/?api_key=8c31a4878805ea4fe690e48fddbfffe1&method=getAppliances&location=%@", _dormID]];
     
     NSData *fileData = [NSData dataWithContentsOfURL:pathToMachinesFile];
@@ -94,9 +107,6 @@
     
     _machines = xmlParserDelegate.machines;
     
-    [self.tableView reloadData];
-    
-    [NSTimer scheduledTimerWithTimeInterval:15.0 target:self selector:@selector(loadMachines:) userInfo:nil repeats:YES];
     
 }
 
@@ -239,8 +249,8 @@
     if(sender.on)
     {
 
-        [self createNotification:[_machines objectAtIndex:indexPath.row]];
-
+        [self performSelectorInBackground:@selector(createNotification:) withObject:[_machines objectAtIndex:indexPath.row]];
+        
     }
     
     else if (!sender.on)
@@ -343,6 +353,8 @@
 {
  
     [self loadUserDormSettings];
+    
+    [self downloadData];
     
 }
 

@@ -135,18 +135,6 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
-    [tableView deselectRowAtIndexPath:_checkedIndexPath animated:NO];
-    
-    if(![indexPath isEqual:_checkedIndexPath])
-    {
-
-        [[tableView cellForRowAtIndexPath:_checkedIndexPath] setAccessoryType: UITableViewCellAccessoryNone];
-
-    }
-    
-    [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType: UITableViewCellAccessoryCheckmark];
-*/
     
     if(_checkedIndexPath)
     {
