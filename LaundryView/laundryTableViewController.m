@@ -133,7 +133,20 @@
     if ([machine.timeRemaining isEqualToString:@"out of service"])
     {
         
-        outOfServiceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"outOfService"];
+        outOfServiceTableViewCell *cell = [outOfServiceTableViewCell alloc];
+        
+        if ([machine.type isEqualToString:@"WASHER"])
+        {
+            
+            cell = [tableView dequeueReusableCellWithIdentifier:@"outOfService"];
+
+        }
+        
+        else {
+            
+            cell = [tableView dequeueReusableCellWithIdentifier:@"outOfServiceDryer"];
+
+        }
         
         cell.machineName.text = [NSString stringWithFormat:@"%@ %@", [[machine.type lowercaseString]capitalizedString], [NSString stringWithFormat:@"%d", [machine.name intValue]]];
         
@@ -144,7 +157,20 @@
     else if ([machine.timeRemaining isEqualToString:@"unknown"])
     {
         
-        unknownTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"unknown"];
+        unknownTableViewCell *cell = [unknownTableViewCell alloc];
+        
+        if ([machine.type isEqualToString:@"WASHER"])
+        {
+            
+            cell = [tableView dequeueReusableCellWithIdentifier:@"unknown"];
+            
+        }
+        
+        else {
+            
+            cell = [tableView dequeueReusableCellWithIdentifier:@"unknownDryer"];
+
+        }
         
         cell.machineName.text = [NSString stringWithFormat:@"%@ %@", [[machine.type lowercaseString]capitalizedString], [NSString stringWithFormat:@"%d", [machine.name intValue]]];
         
@@ -156,7 +182,7 @@
     {
         
         machineTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"machine" forIndexPath:indexPath];
-
+        
         [cell.notificationSwitch setOn:NO animated:NO];
 
         UIApplication *app = [UIApplication sharedApplication];
@@ -191,11 +217,26 @@
         
         cell.timeRemaining.text = [NSString stringWithFormat:@"%i min.", (int) timeRemaining];
         
-        NSArray *imageNames = @[@"activeMachineIcon@f1x2.png",
-                                @"activeMachineIcon@f2x2.png",
-                                @"activeMachineIcon@f3x2.png",
-                                @"activeMachineIcon@f4x2.png",
-                                @"activeMachineIcon@f5x2.png"];
+        NSArray *imageNames = [NSArray alloc];
+        
+        if ([machine.type isEqualToString:@"WASHER"])
+        {
+            
+            imageNames = @[@"activeMachineIcon@f1x2.png",
+                                    @"activeMachineIcon@f2x2.png",
+                                    @"activeMachineIcon@f3x2.png",
+                                    @"activeMachineIcon@f4x2.png",
+                                    @"activeMachineIcon@f5x2.png"];
+            
+        }
+
+        else {
+            
+             imageNames = @[@"activeDryerIcon@f1x2.png",
+                            @"activeDryerIcon@f2x2.png",
+                            @"activeDryerIcon@f1x2.png",
+                            @"activeDryerIcon@f2x2.png"];
+        }
         
         NSMutableArray *images = [[NSMutableArray alloc] init];
         
@@ -217,7 +258,20 @@
     else if ([machine.inUse isEqualToString:@"Available"])
     {
         
-        availableMachineTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"availableMachine" forIndexPath:indexPath];
+        availableMachineTableViewCell *cell = [availableMachineTableViewCell alloc];
+        
+        if ([machine.type isEqualToString:@"WASHER"])
+        {
+            
+            cell = [tableView dequeueReusableCellWithIdentifier:@"availableWasher" forIndexPath:indexPath];
+
+        }
+        
+        else {
+            
+            cell = [tableView dequeueReusableCellWithIdentifier:@"availableDryer" forIndexPath:indexPath];
+            
+        }
         
         cell.machineName.text = [NSString stringWithFormat:@"%@ %@", [[machine.type lowercaseString]capitalizedString], [NSString stringWithFormat:@"%d", [machine.name intValue]]];
         

@@ -26,6 +26,12 @@
 		DD6C6C3D1A6AF90B00192882 /* activeMachineIcon@f5x2.png in Resources */ = {isa = PBXBuildFile; fileRef = DD6C6C381A6AF90B00192882 /* activeMachineIcon@f5x2.png */; };
 		DD6C6C401A6AFB4300192882 /* machineIcon@44px.png in Resources */ = {isa = PBXBuildFile; fileRef = DD6C6C3E1A6AFB4300192882 /* machineIcon@44px.png */; };
 		DD6C6C411A6AFB4300192882 /* machineIcon@88px.png in Resources */ = {isa = PBXBuildFile; fileRef = DD6C6C3F1A6AFB4300192882 /* machineIcon@88px.png */; };
+		DD86ACEA1AC0F9A80084884D /* dryerIcon@44px.png in Resources */ = {isa = PBXBuildFile; fileRef = DD86ACE81AC0F9A80084884D /* dryerIcon@44px.png */; };
+		DD86ACEB1AC0F9A80084884D /* dryerIcon@88px.png in Resources */ = {isa = PBXBuildFile; fileRef = DD86ACE91AC0F9A80084884D /* dryerIcon@88px.png */; };
+		DD86ACEF1AC0FC100084884D /* outOfServiceDryerIcon@44px.png in Resources */ = {isa = PBXBuildFile; fileRef = DD86ACED1AC0FC100084884D /* outOfServiceDryerIcon@44px.png */; };
+		DD86ACF01AC0FC100084884D /* outOfServiceDryerIcon@88px.png in Resources */ = {isa = PBXBuildFile; fileRef = DD86ACEE1AC0FC100084884D /* outOfServiceDryerIcon@88px.png */; };
+		DD86ACF41AC1007F0084884D /* activeDryerIcon@f1x2.png in Resources */ = {isa = PBXBuildFile; fileRef = DD86ACF21AC1007F0084884D /* activeDryerIcon@f1x2.png */; };
+		DD86ACF51AC1007F0084884D /* activeDryerIcon@f2x2.png in Resources */ = {isa = PBXBuildFile; fileRef = DD86ACF31AC1007F0084884D /* activeDryerIcon@f2x2.png */; };
 		DDAEE0D41A696325000745D7 /* home_icon@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDAEE0D11A696325000745D7 /* home_icon@1x.png */; };
 		DDAEE0D51A696325000745D7 /* home_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDAEE0D21A696325000745D7 /* home_icon@2x.png */; };
 		DDAEE0D61A696325000745D7 /* home_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDAEE0D31A696325000745D7 /* home_icon@3x.png */; };
@@ -91,6 +97,12 @@
 		DD6C6C381A6AF90B00192882 /* activeMachineIcon@f5x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "activeMachineIcon@f5x2.png"; sourceTree = "<group>"; };
 		DD6C6C3E1A6AFB4300192882 /* machineIcon@44px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "machineIcon@44px.png"; sourceTree = "<group>"; };
 		DD6C6C3F1A6AFB4300192882 /* machineIcon@88px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "machineIcon@88px.png"; sourceTree = "<group>"; };
+		DD86ACE81AC0F9A80084884D /* dryerIcon@44px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dryerIcon@44px.png"; sourceTree = "<group>"; };
+		DD86ACE91AC0F9A80084884D /* dryerIcon@88px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dryerIcon@88px.png"; sourceTree = "<group>"; };
+		DD86ACED1AC0FC100084884D /* outOfServiceDryerIcon@44px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "outOfServiceDryerIcon@44px.png"; sourceTree = "<group>"; };
+		DD86ACEE1AC0FC100084884D /* outOfServiceDryerIcon@88px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "outOfServiceDryerIcon@88px.png"; sourceTree = "<group>"; };
+		DD86ACF21AC1007F0084884D /* activeDryerIcon@f1x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "activeDryerIcon@f1x2.png"; sourceTree = "<group>"; };
+		DD86ACF31AC1007F0084884D /* activeDryerIcon@f2x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "activeDryerIcon@f2x2.png"; sourceTree = "<group>"; };
 		DDAEE0D11A696325000745D7 /* home_icon@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_icon@1x.png"; sourceTree = "<group>"; };
 		DDAEE0D21A696325000745D7 /* home_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_icon@2x.png"; sourceTree = "<group>"; };
 		DDAEE0D31A696325000745D7 /* home_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_icon@3x.png"; sourceTree = "<group>"; };
@@ -193,9 +205,39 @@
 			name = "@88px";
 			sourceTree = "<group>";
 		};
+		DD86ACE71AC0F9510084884D /* availableDryerIcon */ = {
+			isa = PBXGroup;
+			children = (
+				DD86ACE81AC0F9A80084884D /* dryerIcon@44px.png */,
+				DD86ACE91AC0F9A80084884D /* dryerIcon@88px.png */,
+			);
+			name = availableDryerIcon;
+			sourceTree = "<group>";
+		};
+		DD86ACEC1AC0FBFF0084884D /* outOfServiceDryerIcon */ = {
+			isa = PBXGroup;
+			children = (
+				DD86ACED1AC0FC100084884D /* outOfServiceDryerIcon@44px.png */,
+				DD86ACEE1AC0FC100084884D /* outOfServiceDryerIcon@88px.png */,
+			);
+			name = outOfServiceDryerIcon;
+			sourceTree = "<group>";
+		};
+		DD86ACF11AC100680084884D /* animatedDryer */ = {
+			isa = PBXGroup;
+			children = (
+				DD86ACF21AC1007F0084884D /* activeDryerIcon@f1x2.png */,
+				DD86ACF31AC1007F0084884D /* activeDryerIcon@f2x2.png */,
+			);
+			name = animatedDryer;
+			sourceTree = "<group>";
+		};
 		DDAEE0B01A695E55000745D7 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				DD86ACF11AC100680084884D /* animatedDryer */,
+				DD86ACEC1AC0FBFF0084884D /* outOfServiceDryerIcon */,
+				DD86ACE71AC0F9510084884D /* availableDryerIcon */,
 				DDD495FD1A7DC5D30070E767 /* WFU_logo.gif */,
 				DD6C6C211A6AF35B00192882 /* animatedMachine */,
 				DD6C6C1C1A6AEBCA00192882 /* outOfServiceMachineIcon */,
@@ -441,9 +483,13 @@
 				DD6C6C3D1A6AF90B00192882 /* activeMachineIcon@f5x2.png in Resources */,
 				DD6C6C201A6AEC0200192882 /* outOfServiceMachineIcon@88px.png in Resources */,
 				DD6C6C3C1A6AF90B00192882 /* activeMachineIcon@f4x2.png in Resources */,
+				DD86ACEF1AC0FC100084884D /* outOfServiceDryerIcon@44px.png in Resources */,
+				DD86ACF51AC1007F0084884D /* activeDryerIcon@f2x2.png in Resources */,
 				DDD495FE1A7DC5D30070E767 /* WFU_logo.gif in Resources */,
 				DDAEE0E81A696E87000745D7 /* appIcon@180px.png in Resources */,
+				DD86ACF41AC1007F0084884D /* activeDryerIcon@f1x2.png in Resources */,
 				DD6C6C3A1A6AF90B00192882 /* activeMachineIcon@f2x2.png in Resources */,
+				DD86ACEB1AC0F9A80084884D /* dryerIcon@88px.png in Resources */,
 				DDAEE0E11A696E87000745D7 /* appIcon@40px.png in Resources */,
 				DDAEE0D61A696325000745D7 /* home_icon@3x.png in Resources */,
 				DDAEE0E71A696E87000745D7 /* appIcon@152px.png in Resources */,
@@ -459,6 +505,8 @@
 				DD6C6C321A6AF8CE00192882 /* activeMachineIcon@f5.png in Resources */,
 				DD6C6C411A6AFB4300192882 /* machineIcon@88px.png in Resources */,
 				DD6C6C1F1A6AEC0200192882 /* outOfServiceMachineIcon@44px.png in Resources */,
+				DD86ACF01AC0FC100084884D /* outOfServiceDryerIcon@88px.png in Resources */,
+				DD86ACEA1AC0F9A80084884D /* dryerIcon@44px.png in Resources */,
 				DDAEE0D41A696325000745D7 /* home_icon@1x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
