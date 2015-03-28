@@ -22,7 +22,7 @@
     
     [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
     
-    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     
     return YES;
     
@@ -46,10 +46,18 @@
 - (void)application:(UIApplication *)app didReceiveLocalNotification:(UILocalNotification *)notification
 {
     
-    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    [[UIApplication sharedApplication] cancelLocalNotification:notification];
+    
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 
     [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadTheTable" object:nil];
     
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 }
 
 @end
