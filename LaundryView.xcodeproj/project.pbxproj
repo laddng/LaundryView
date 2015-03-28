@@ -129,7 +129,7 @@
 		DDC385171A4F8F9500F445A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDC385181A4F8F9500F445A6 /* LaundryViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LaundryViewTests.m; sourceTree = "<group>"; };
 		DDC385221A4F91B200F445A6 /* laundryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = laundryTableViewController.h; sourceTree = "<group>"; };
-		DDC385231A4F91B200F445A6 /* laundryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = laundryTableViewController.m; sourceTree = "<group>"; };
+		DDC385231A4F91B200F445A6 /* laundryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = laundryTableViewController.m; sourceTree = "<group>"; wrapsLines = 1; };
 		DDC385251A4F922000F445A6 /* settingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = settingsTableViewController.h; sourceTree = "<group>"; };
 		DDC385261A4F922000F445A6 /* settingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = settingsTableViewController.m; sourceTree = "<group>"; };
 		DDC385281A4F929B00F445A6 /* machineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = machineTableViewCell.h; path = subclass/machineTableViewCell.h; sourceTree = "<group>"; };

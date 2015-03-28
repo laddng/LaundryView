@@ -348,7 +348,7 @@
     
     NSString *timeRemainingInt = [[[userMachine timeRemaining] componentsSeparatedByCharactersInSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]] componentsJoinedByString:@""];
     
-    NSDate *start = [dateFormatter dateFromString:@"01"];
+    NSDate *start = [dateFormatter dateFromString:@"05"];
     
     NSDate *end = [dateFormatter dateFromString:timeRemainingInt];
     
@@ -367,14 +367,14 @@
     if ([[userMachine type] isEqualToString:@"WASHER"])
     {
         
-        notifyMe.alertBody = @"Your laundry load in the washer will be finished in 1 minute!";
+        notifyMe.alertBody = @"Your laundry load in the washer will be finished in 5 minutes!";
 
     }
     
     else if ([[userMachine type] isEqualToString:@"DRYER"])
     {
         
-        notifyMe.alertBody = @"Your laundry load in the dryer will be finished in 1 minute!";
+        notifyMe.alertBody = @"Your laundry load in the dryer will be finished in 5 minutes!";
 
     }
 

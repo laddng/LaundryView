@@ -21,8 +21,8 @@
     UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
     
     [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
-
-    application.applicationIconBadgeNumber = -1;
+    
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     
     return YES;
     
@@ -45,8 +45,8 @@
 
 - (void)application:(UIApplication *)app didReceiveLocalNotification:(UILocalNotification *)notification
 {
-
-    app.applicationIconBadgeNumber = -1;
+    
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
 
     [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadTheTable" object:nil];
     
