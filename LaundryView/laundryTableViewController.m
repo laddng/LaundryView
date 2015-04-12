@@ -32,7 +32,7 @@
 {
 
     [super viewDidLoad];
-
+    
     _machines = [[NSMutableArray alloc] init];
 
     [self loadUserDormSettings];
@@ -406,6 +406,8 @@
 
 - (IBAction)mainViewDidUnwind:(UIStoryboardSegue *)segue
 {
+    
+    [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
  
     [self loadUserDormSettings];
     
