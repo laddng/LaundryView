@@ -1,4 +1,4 @@
-![logo](http://is1.mzstatic.com/image/thumb/Purple5/v4/c8/f1/a8/c8f1a89d-ef1a-86ad-abf6-bb3eced1c465/source/175x175bb.jpg "App Store Icon")
+->![logo](http://is1.mzstatic.com/image/thumb/Purple5/v4/c8/f1/a8/c8f1a89d-ef1a-86ad-abf6-bb3eced1c465/source/175x175bb.jpg "App Store Icon")<-
 # LaundryView
 An iOS mobile application that tracks the laundry machines in the student dormitories at Wake Forest University.
 
