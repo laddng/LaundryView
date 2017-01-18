@@ -1,7 +1,7 @@
 # LaundryView
 An iOS mobile application that tracks the laundry machines in the student dormitories at Wake Forest University.
 
-[View in iTunes App Store][https://itunes.apple.com/us/app/wfu-laundryview/id431321503?mt=8]
+[View in iTunes App Store](https://itunes.apple.com/us/app/wfu-laundryview/id431321503?mt=8)
 
 ### Setup
 
@@ -17,9 +17,9 @@ This application connects to an API server that handles the data of each laundry
 
 The links for the API are setup so that there is one master XML file that lists all the dorms. This file can be found [here](http://api.laundryview.com/school/?api_key=8c31a4878805ea4fe690e48fddbfffe1&method=getRoomData). With each dorm location, there is an ID number associated with it. Those ID numbers can be used to navigate to that dorm's XML file to get information about that dorm's laundry room. The format of that URL is:
 
-'''
+```
 http://api.laundryview.com/room/?api_key=8c31a4878805ea4fe690e48fddbfffe1&method=getAppliances&location={DORM ID HERE}
-'''
+```
 
 ### Push Notifications
 
